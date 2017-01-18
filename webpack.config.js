@@ -12,19 +12,35 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.css$/, loader: "style-loader!css-loader"},
-            {test: /(\.html)$/, loader: "html-loader"},
-            {test: /\.(jpg)|(png)|(gif)$/, loader: "url-loader"},
-            {test: /\.vue$/, loader: "vue-loader"},
+            {
+                test: /\.css$/, 
+                loader: "css!less"
+            },
+            {
+                test: /(\.html)$/,
+                loader: "html-loader"
+            },
+            {
+                test: /\.(jpg)|(png)|(gif)$/,
+                loader: "url-loader"
+            },
+            {
+                test: /\.vue$/,
+                loader: "vue"
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel',
+                query: {
+                    presets: ['es2015','stage-3'],
+                    plugins: ['transform-runtime']
+                },
             }
         ]
     },
     plugins: [
-        new webpack.BannerPlugin("Vue-html5-editor " + package.version + "\nhttps://github.com/PeakTai/vue-html5-editor"),
+        // new webpack.BannerPlugin("Vue-html5-editor " + package.version + "\nhttps://github.com/PeakTai/vue-html5-editor"),
         new webpack.DefinePlugin({
             ROOT: JSON.stringify(path.normalize(__dirname)),
         }),
@@ -33,8 +49,21 @@ module.exports = {
         })
     ],
     debug: false,
+    vue: {
+        loaders: {
+            js: 'babel',
+            css: 'css!less',
+            less: 'css!less'
+        }
+    },
     babel: {
-        presets: ['es2015'],
+        presets: ['es2015','stage-3'],
         plugins: ['transform-runtime']
+    },    
+    resolve: {
+        extensions: ['','.js','.vue'],
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
     }
 }

@@ -1,5 +1,5 @@
 
-<style lang="less" src="./style.less"></style>
+<!-- <style lang="less" src="./style.less"></style> -->
 <template>
     <div class="vue-html5-editor" :style="{'z-index':zIndex}" :class="{'full-screen':fullScreen}">
         <div class="toolbar" :style="{'z-index':zIndex+1}" ref="toolbar">
@@ -17,8 +17,7 @@
                 </keep-alive>
             </div>
         </div>
-        <div class="content" ref="content" contenteditable="true" @click="toggleDashboard(dashboard)"
-             :style="contentStyle">
+        <div class="content" ref="content" contenteditable="true" @click="toggleDashboard(dashboard)" :style="contentStyle">
         </div>
     </div>
 </template>

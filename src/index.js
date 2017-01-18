@@ -8,7 +8,7 @@ import moduleLink from "./modules/link/index";
 import moduleUnlink from "./modules/unlink/index";
 import moduleTable from "./modules/table/index";
 import moduleImage from "./modules/image/index";
-import moduleHr from "./modules/hr";
+import moduleHr from "./modules/hr/index";
 import moduleEraser from "./modules/eraser/index";
 import moduleUndo from "./modules/undo/index";
 import moduleFullScreen from "./modules/full-screen/index";

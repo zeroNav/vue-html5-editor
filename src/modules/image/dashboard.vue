@@ -28,7 +28,7 @@
 
 <script>
 
-    import lrz from './lrz.all.bundle'
+    // import lrz from './lrz.all.bundle'
     export default {
         data() {
             return {
@@ -68,20 +68,20 @@
                 }
                 component.$refs.file.value = null
                 //需要压缩
-                if (config.compress) {
-                    lrz(file, {
-                        width: config.width,
-                        height: config.height,
-                        quality: config.quality,
-                        fieldName: config.fieldName
-                    }).then(function (rst) {
-                        config.server ? component.uploadFile(rst.file) : component.insertBase64(rst.base64)
-                    }).catch(function (err) {
-                        component.upload.status = "error"
-                        console.log("upload error", err)
-                    })
-                    return
-                }
+                // if (config.compress) {
+                //     lrz(file, {
+                //         width: config.width,
+                //         height: config.height,
+                //         quality: config.quality,
+                //         fieldName: config.fieldName
+                //     }).then(function (rst) {
+                //         config.server ? component.uploadFile(rst.file) : component.insertBase64(rst.base64)
+                //     }).catch(function (err) {
+                //         component.upload.status = "error"
+                //         console.log("upload error", err)
+                //     })
+                //     return
+                // }
                 //不需要压缩
                 //base64
                 if (!config.server) {

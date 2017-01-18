@@ -1,4 +1,4 @@
-<style>
+<style lang="css" rel="stylesheet/css">
     .vue-html5-editor .dashboard .dashboard-font {
         line-height: 36px;
     }

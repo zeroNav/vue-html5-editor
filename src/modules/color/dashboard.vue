@@ -1,4 +1,4 @@
-<style>
+<style lang="css">
     .vue-html5-editor .color-card {
         margin: 2px;
         width: 30px;
